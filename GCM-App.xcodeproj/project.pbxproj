@@ -7,17 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554CE02C1DB6AA3F003357BB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CE02B1DB6AA3F003357BB /* Location.swift */; };
+		554CE02E1DB6ADC5003357BB /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554CE02D1DB6ADC5003357BB /* Route.swift */; };
 		5582AD931DB55132005A475D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582AD921DB55132005A475D /* AppDelegate.swift */; };
 		5582AD951DB55132005A475D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582AD941DB55132005A475D /* ViewController.swift */; };
 		5582AD981DB55132005A475D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5582AD961DB55132005A475D /* Main.storyboard */; };
 		5582AD9A1DB55132005A475D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5582AD991DB55132005A475D /* Assets.xcassets */; };
 		5582AD9D1DB55132005A475D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5582AD9B1DB55132005A475D /* LaunchScreen.storyboard */; };
 		5582ADA51DB556EA005A475D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5582ADA41DB556EA005A475D /* GoogleService-Info.plist */; };
-		974D10CA7593A1451E98DBB6 /* libPods-GCM-App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A07B726068F050301B9F40F4 /* libPods-GCM-App.a */; };
+		BA5DB805F8B9180AEA5661CE /* Pods_GCM_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1597C914CDBEF10BF44E5F0A /* Pods_GCM_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1597C914CDBEF10BF44E5F0A /* Pods_GCM_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GCM_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1909010ADEEF5B419019EA /* Pods-GCM-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCM-App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GCM-App/Pods-GCM-App.debug.xcconfig"; sourceTree = "<group>"; };
+		554CE02B1DB6AA3F003357BB /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		554CE02D1DB6ADC5003357BB /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		5582AD8F1DB55131005A475D /* GCM-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GCM-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5582AD921DB55132005A475D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5582AD941DB55132005A475D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +34,6 @@
 		5582ADA61DB55782005A475D /* GCM-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCM-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		5582ADA91DB56333005A475D /* GCM-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GCM-App.entitlements"; sourceTree = "<group>"; };
 		5F9BF0E1A4E5D0E7825686D6 /* Pods-GCM-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCM-App.release.xcconfig"; path = "Pods/Target Support Files/Pods-GCM-App/Pods-GCM-App.release.xcconfig"; sourceTree = "<group>"; };
-		A07B726068F050301B9F40F4 /* libPods-GCM-App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GCM-App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				974D10CA7593A1451E98DBB6 /* libPods-GCM-App.a in Frameworks */,
+				BA5DB805F8B9180AEA5661CE /* Pods_GCM_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +60,7 @@
 		377A00B9F0AEDF61F75D95B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A07B726068F050301B9F40F4 /* libPods-GCM-App.a */,
+				1597C914CDBEF10BF44E5F0A /* Pods_GCM_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -91,6 +95,8 @@
 				5582AD9E1DB55132005A475D /* Info.plist */,
 				5582ADA41DB556EA005A475D /* GoogleService-Info.plist */,
 				5582ADA61DB55782005A475D /* GCM-App-Bridging-Header.h */,
+				554CE02B1DB6AA3F003357BB /* Location.swift */,
+				554CE02D1DB6ADC5003357BB /* Route.swift */,
 			);
 			path = "GCM-App";
 			sourceTree = "<group>";
@@ -134,6 +140,9 @@
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -227,6 +236,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5582AD951DB55132005A475D /* ViewController.swift in Sources */,
+				554CE02E1DB6ADC5003357BB /* Route.swift in Sources */,
+				554CE02C1DB6AA3F003357BB /* Location.swift in Sources */,
 				5582AD931DB55132005A475D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,6 @@
+framework module Pods_GCM_App {
+  umbrella header "Pods-GCM-App-umbrella.h"
+
+  export *
+  module * { export * }
+}

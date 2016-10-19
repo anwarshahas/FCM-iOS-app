@@ -8,15 +8,18 @@
 
 import UIKit
 import UserNotifications
+import CoreLocation
 
 import Firebase
 //import FirebaseInstanceID
 //import FirebaseMessaging
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,  CLLocationManagerDelegate{
     
     var window: UIWindow?
+    
+    var locationManager: CLLocationManager?
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -51,6 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                name: .firInstanceIDTokenRefresh,
                                                object: nil)
         
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.allowsBackgroundLocationUpdates = true
+        locationManager?.startUpdatingLocation()
         return true
     }
     
@@ -74,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let refreshedToken = FIRInstanceID.instanceID().token() {
             print("InstanceID token: \(refreshedToken)")
         }
-        
+    
         // Connect to FCM since connection may have failed when attempted before having a token.
         connectToFcm()
     }
@@ -87,6 +95,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Unable to connect with FCM. \(error)")
             } else {
                 print("Connected to FCM.")
+                if let refreshedToken = FIRInstanceID.instanceID().token() {
+                    print("InstanceID token: \(refreshedToken)")
+                    Location.registerUser(fcmToken: refreshedToken)
+                }
             }
         }
     }
@@ -94,14 +106,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         connectToFcm()
+//        locationManager?.stopUpdatingLocation()
     }
     
     // [START disconnect_from_fcm]
     func applicationDidEnterBackground(_ application: UIApplication) {
         FIRMessaging.messaging().disconnect()
         print("Disconnected from FCM.")
+        locationManager?.startUpdatingLocation()
     }
     // [END disconnect_from_fcm]
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("latitude-%f  longitude-%f", locations.first?.coordinate.latitude, locations.first?.coordinate.longitude)
+        Location.updateLocation(latitude: (locations.first?.coordinate.latitude)!, longitude: (locations.first?.coordinate.longitude)!)
+    }
+    
 }
 
 // [START ios_10_message_handling]
